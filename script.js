@@ -21,7 +21,7 @@ guessField.addEventListener("keyup", function (event) {
         // Cancel the default action, if needed
         event.preventDefault();
         // Trigger the button element with a click
-        checkGuess();
+        guessSubmit.click();
     }
 });
 
@@ -81,7 +81,9 @@ function checkGuess() {
 function setGameOver() {
     lowOrHi.textContent = "The number is: " + randomNumber;
     guessSubmit.innerHTML = 'Restart Game';
-    guessCount = 10;
+    guessSubmit.setAttribute('onclick', 'reset()');
+    // guessSubmit.removeAttribute('click');
+
 
 
 
@@ -99,4 +101,6 @@ function reset() {
     lastResult.textContent = "";
     lastResult.style.backgroundColor = '';
     guessSubmit.innerHTML = 'Submit guess';
+    randomNumber = Math.floor(Math.random() * 101);
+    guessSubmit.setAttribute('onclick', 'checkGuess()');
 }
