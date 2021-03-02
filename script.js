@@ -1,4 +1,4 @@
-let randomNumber = Math.floor(Math.random() * 100) + 1;
+let randomNumber = Math.floor(Math.random() * 101);
 
 
 const div = document.querySelector('.newButton')
@@ -102,5 +102,5 @@ function reset() {
     lastResult.style.backgroundColor = '';
     guessSubmit.innerHTML = 'Submit guess';
     randomNumber = Math.floor(Math.random() * 101);
-    guessSubmit.setAttribute('onclick', 'checkGuess()');
+    guessSubmit.removeAttribute('onclick');
 }
