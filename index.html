@@ -5,6 +5,7 @@
     <meta charset="utf-8">
 
     <title>Number guessing game</title>
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
         html {
@@ -16,6 +17,7 @@
             max-width: 800px;
             min-width: 480px;
             margin: 0 auto;
+            background: linear-gradient(0.25turn, #e66465, #9198e5);
         }
 
         .lastResult {
@@ -31,12 +33,14 @@
     <p>We have selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you
         if your guess was too high or too low.</p>
 
-    <div class="form">
-        <label for="guessField">Enter a guess: </label>
-        <input type="text" id="guessField" class="guessField">
-        <input onclick=checkGuess() type="submit" value="Submit guess" class="guessSubmit">
+    <div class="form-group">
+        <label class="form-check-label" for="guessField">Enter a guess: </label>
+        <input type="text" id="guessField" class="form-control guessField" placeholder="Enter number">
+        <button type="submit" value="Submit guess" class="btn btn-primary guessSubmit">Submit
+            guess</button>
 
     </div>
+
 
     <div class="resultParas">
         <p class="guesses"></p>

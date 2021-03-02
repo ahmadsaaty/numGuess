@@ -12,10 +12,13 @@ const guessField = document.querySelector('.guessField');
 let guessCount = 1;
 
 
-
+guessSubmit.addEventListener('click', checkGuess)
 
 function checkGuess() {
+
     let userGuess = Number(guessField.value);
+
+
     if (guessCount === 1) {
         guesses.textContent = 'Previous guesses: ';
     }
@@ -43,7 +46,14 @@ function checkGuess() {
         }
     }
 
+
+
+
     guessCount++;
+
+
+
+
     guessField.value = '';
     guessField.focus();
 
@@ -59,7 +69,7 @@ function checkGuess() {
 
 function setGameOver() {
     lowOrHi.textContent = "The number is: " + randomNumber;
-    guessSubmit.setAttribute('value', 'Restart Game')
+    guessSubmit.innerHTML = 'Restart Game';
     guessCount = 10;
 
 
@@ -71,11 +81,11 @@ function setGameOver() {
 }
 
 function reset() {
-    guessCount = 1;
+    guessCount = 0;
     guessField.value = '';
-    guesses.textContent = "";
+    guesses.textContent = ''
     lowOrHi.textContent = "";
     lastResult.textContent = "";
     lastResult.style.backgroundColor = '';
-    guessSubmit.setAttribute('value', 'Submit guess')
+    guessSubmit.innerHTML = 'Submit guess';
 }
